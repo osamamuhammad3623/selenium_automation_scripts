@@ -16,3 +16,4 @@ Preview: https://youtu.be/heWg4nJWw4g
 - Add elements
 - Un/check checkboxes
 - Choose from a dropdown menu
+- Interact with different JavaScript alerts
