@@ -1,0 +1,48 @@
+Initiating driver for Chrome:
+System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+
+driver.get(URL)
+driver.getCurrentUrl()
+driver.getTitle()
+driver.navigate().to(URL)
+driver.navigate().back()
+driver.navigate().forward()
+driver.navigate().refresh()
+
+driver.manage().window().maximize()
+driver.getWindowHandle() -> returns window ID as a string
+
+driver.switchTo().newWindow(WindowType.WINDOW) -> launch a new window
+driver.switchTo().newWindow(WindowType.TAB) -> open a new tab
+
+driver.close() -> close the current window
+driver.quit() -> close all automated windows
+
+driver.findElement(By.id(String))
+driver.findElement(By.linkText(String))
+driver.findElement(By.partialLinkText(String))
+driver.findElement(By.className(String))
+
+-- You can NOT use classes that have spaces [[use XPath]]
+	Not recommended, because class name is usually used multiple times, and Selenium always
+	picks the first element that has the class name you provided.
+
+Do NOT use Alpha-numeric IDs
+	it usually vary on every refresh [generated], try xpath/contains
+	or css selector with part of the value: attribute*='value'
+
+XPath syntax: //tag_name[@attribute = value]
+- you can replace tag_name with *
+- to validate xpath, in console: $x(xpath string)
+- you can write part of the attribute value in XPath, using:
+	//tag_name[contains(@attibute, part_of_value)]
+
+- what to do if you have more than one element with the same XPath? 
+	-->(xpath)[i] where i = 2,3,..
+
+CSS Selector syntax: tag_name[attribute=value]
+- if the attribute is id, you can use tag_name#id OR #id
+- if the attribute is class (no spaces), you can use tag_name.class_name OR .class_name
+- to validate ccs selector, in console: $$(ccs selector string)
+
+tags for a static dropdown: select
