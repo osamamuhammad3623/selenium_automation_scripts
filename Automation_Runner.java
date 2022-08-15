@@ -11,7 +11,8 @@ public class Automation_Runner {
 		
 		The_Internet_Herokuapp app = new The_Internet_Herokuapp();
 		//app.add_elements(4);
-		app.check_checkbox(2);
+		//app.check_checkbox(2);
+		app.dropdown_menu("Option 2");
 	}
 	
 }

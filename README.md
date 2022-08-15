@@ -10,3 +10,9 @@
 - Go to cart to confirm purchase and fill personal info
 - Logout
 Preview: https://youtu.be/heWg4nJWw4g
+
+
+## The Internet Herokuapp class contains the following actions:
+- Add elements
+- Un/check checkboxes
+- Choose from a dropdown menu

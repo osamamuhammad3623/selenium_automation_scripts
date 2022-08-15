@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class The_Internet_Herokuapp {
 	
@@ -33,5 +34,12 @@ public class The_Internet_Herokuapp {
 	}
 	
 	
+	public void dropdown_menu(String option) {
+		driver.get("http://the-internet.herokuapp.com/dropdown");
+		
+		WebElement menu = driver.findElement(By.id("dropdown"));
+		Select options = new Select(menu);
+		options.selectByVisibleText(option);
+	}
 	
 }
