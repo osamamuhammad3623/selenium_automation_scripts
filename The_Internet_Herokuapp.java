@@ -1,5 +1,7 @@
 package default_selenium;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,12 +14,18 @@ public class The_Internet_Herokuapp {
 	
 	public void add_elements(int n) {
 		driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
-		driver.manage().window().maximize();
 		
 		WebElement btn = driver.findElement(By.xpath("//button[@onclick='addElement()']"));
 		for (int i=0; i< n; i++)
 			btn.click();
 	}
+	
+//	public void remove_element(int index) {
+//		driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
+//		
+//		List<WebElement> buttons = driver.findElements(By.linkText("Delete"));
+//		buttons.get(index).click();
+//	}
 	
 
 	public void check_checkbox(int box) {
@@ -41,5 +49,31 @@ public class The_Internet_Herokuapp {
 		Select options = new Select(menu);
 		options.selectByVisibleText(option);
 	}
+	
+	public void js_alerts(String type) {
+		
+		driver.get("http://the-internet.herokuapp.com/javascript_alerts");
+		
+		String alert_xpath = "";
+		if (type.equals("Alert")) {
+			alert_xpath = "//button[@onclick='jsAlert()']";
+		}else if (type.equals("Confirm")) {
+			alert_xpath = "//button[@onclick='jsConfirm()']";
+		}else if (type.equals("Prompt")) {
+			alert_xpath = "//button[@onclick='jsPrompt()']";
+		}
+		
+		driver.findElement(By.xpath(alert_xpath)).click();
+		
+		if (type.equals("Alert")) {
+			driver.switchTo().alert().accept();
+		}else if (type.equals("Confirm")) {
+			driver.switchTo().alert().accept(); // or dismiss
+		}else if (type.equals("Prompt")) {
+			driver.switchTo().alert().sendKeys("It's me!");
+			driver.switchTo().alert().accept();
+		}
+	}
+	
 	
 }
