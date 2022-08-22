@@ -17,3 +17,12 @@ Preview: https://youtu.be/heWg4nJWw4g
 - Un/check checkboxes
 - Choose from a dropdown menu
 - Interact with different JavaScript alerts
+
+## ASU dorms website automation
+- Login to student account
+- Navigate to acceptance inquiry page
+
+## ENG-ASU SIS automation
+- Login
+- Go to student profile
+- Navigate to "My Courses" page
