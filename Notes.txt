@@ -45,4 +45,6 @@ CSS Selector syntax: tag_name[attribute=value]
 - if the attribute is class (no spaces), you can use tag_name.class_name OR .class_name
 - to validate ccs selector, in console: $$(ccs selector string)
 
-tags for a static dropdown: select
+the tag of a static drop-down: select
+the tag of a dynamic drop-down: input
+
