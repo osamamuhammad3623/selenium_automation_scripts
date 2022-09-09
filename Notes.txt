@@ -48,3 +48,5 @@ CSS Selector syntax: tag_name[attribute=value]
 the tag of a static drop-down: select
 the tag of a dynamic drop-down: input
 
+action.moveToElement(WebElement) -> can be used to hover an element
+you can use method chaining in Actions class. i.e. click().sendkeys().doubleclick()
