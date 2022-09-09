@@ -2,7 +2,9 @@ package default_selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 /*
  * A class that contains a one-method scripts
@@ -48,5 +50,18 @@ public class Automation_Scripts {
 		while(!driver.findElement(By.id("getResult")).isDisplayed());
 		driver.findElement(By.id("getResult")).click();
 
+	}
+	
+	public void ebayActions() {
+		driver.get("https://www.ebay.com/");
+		WebElement search_box = driver.findElement(By.xpath("//input[@maxlength='300']"));
+		String search_key = "ebay automation";
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(search_box)
+		.click()
+		.sendKeys(search_key)
+		.doubleClick()
+		.build().perform();
 	}
 }
