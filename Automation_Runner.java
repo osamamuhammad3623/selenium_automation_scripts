@@ -22,6 +22,10 @@ public class Automation_Runner {
 		//Automation_Scripts scripts = new Automation_Scripts();
 		//scripts.Dorms_Automation("xxx", "xxx");
 		
+		/* Ebay actions */
+		//Automation_Scripts scripts = new Automation_Scripts();
+		//scripts.ebayActions();
+		
 	}
 	
 }
